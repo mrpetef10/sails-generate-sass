@@ -32,15 +32,6 @@ module.exports = {
 
   before: function (scope, cb) {
 
-    // scope.args are the raw command line arguments.
-    //
-    // e.g. if someone runs:
-    // $ sails generate sails-sass user find create update
-    // then `scope.args` would be `['user', 'find', 'create', 'update']`
-    //if (!scope.args[0]) {
-    //  return cb( new Error('Please provide a name for this sails-sass.') );
-    //}
-
     // scope.rootPath is the base path for this generator
     //
     // e.g. if this generator specified the target:
@@ -52,17 +43,10 @@ module.exports = {
       return cb( INVALID_SCOPE_VARIABLE('rootPath') );
     }
 
-
-    // Attach defaults
-    _.defaults(scope, {
-      createdAt: new Date()
-    });
-
-    // Decide the output filename for use in targets below:
-    scope.filename = scope.args[0];
-
-    // Add other stuff to the scope for use in our templates:
-    scope.whatIsThis = 'an example file created at '+scope.createdAt;
+      // Ensure we install grunt-contrib-sass
+      // Thanks to robertbak for providing this
+      var exec = require('child_process').exec;
+      exec('npm install grunt-contrib-sass --save-dev');
 
     // When finished, we trigger a callback with no error
     // to begin generating files/folders as specified by
