@@ -1,0 +1,30 @@
+{
+  "name": "sails-generate-sass",
+  "version": "0.0.51",
+  "description": "Setup a sails project with SASS enabled",
+  "main": "Generator.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "sails-sass",
+    "generator",
+    "sails",
+    "generate",
+    "plugin",
+    "sass"
+  ],
+  "author": "mrpetem",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": ">=2.4.x",
+    "merge-defaults": ">=0.1.0"
+  },
+  "devDependencies": {
+  },
+  "sailsGenerator": {
+    "type": "sails-sass",
+    "behavior": "overrides `sails generate sails-sass`",
+    "sailsVersion": "~0.10.0"
+  }
+}
