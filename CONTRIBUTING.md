@@ -1,4 +1,4 @@
-# Contributing to sails-generate-sails-sass
+# Contributing to sails-generate-sass
 
 
 ## Opening Issues
